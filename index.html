@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+   <head>
+      <meta charset = "UTF-8">
+      <title>Login</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="myStyle.css" />
+      <script src="validate.js"></script>
+      <script src="main.js"></script>
+   
+   </head>
+
+   <body>
+      <div class="container">
+         <h1 class="text-center">Create account</h1><br />
+         <form class="horizontal-form" action="profile.html" name="myForm" onSubmit="return validateForm()">
+            <div class="form-group row">
+               <label for="userid" class="control-label col-sm-3">User Id:</label>
+               <div class="col-sm-9">
+                  <input type="number" class="form-control" id="userid" placeholder="User id must be of length 5 to 12" name="ID"><p id="idfb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="name" class="control-label col-sm-3">Full Name:</label>
+               <div class="col-sm-9">
+                  <input type="text" class="form-control" id="name" placeholder="Enter your full name with min of 8 characters" name="fullname" ><p id="namefb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="password" class="control-label col-sm-3">Password:</label>
+               <div class="col-sm-9">
+                  <input type="password" class="form-control" id="password" name="password1" placeholder="Password must be a length of 8 to 12"><p id="pwdfb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="repassword" class="control-label col-sm-3">Re enter password:</label>
+               <div class="col-sm-9">
+                  <input type="password" class="form-control" id="repassword" name="password2" placeholder="Enter password again"><p id="repwdfb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="mobile" class="control-label col-sm-3">Mobile number:</label>
+               <div class="col-sm-9">
+                  <input type="number" class="form-control" id="mobile" name="phoneNo" placeholder="Enter 10 digit mobile number" maxlength="10" ><p id="mobilefb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="email" class="control-label col-sm-3">Email:</label>
+               <div class="col-sm-9">
+                  <input type="email" class="form-control" id="email" name="mail" placeholder="Enter valid email">
+                  <p id="mailfb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="country" class="control-label col-sm-3">Select country:</label>
+               <div class="col-sm-9">
+                  <select class="form-control" id ="country" name="countryName" onchange="getState(this.options[this.selectedIndex].id)">
+                     <option value="0">Select country</option>
+                  </select>
+                  <p id="countryfb"></p>
+                  <select class="form-control" id ="states" name="stateName" style="margin-top: 5px">
+                     <option value="0">Select state</option>
+                  </select>
+                  <p id="statefb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="zip" class="control-label col-sm-3">Zip Code:</label>
+               <div class="col-sm-9">
+                  <input type="number" class="form-control" id="zip" placeholder="Must be numeric" name="pincode" >
+                  <p id="zipfb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <label for="sex" class="control-label col-sm-3">Gender:</label>
+               <div class="col-sm-9" id="radioInsert"></div>
+            </div>
+            <div class="form-group row">
+               <label for="lang" class="control-label col-sm-3">Language:</label>
+               <div class="col-sm-9 check" id="checkInsert"></div>
+            </div>
+            <div class="form-group row">
+               <label for="about" class="control-label col-sm-3">About You:</label>
+               <div class="col-sm-9">
+                  <textarea class="form-control" id="about" placeholder="Optional" rows="5" name="abt"></textarea>
+                  <p id="aboutfb"></p>
+               </div>
+            </div>
+            <div class="form-group row">
+               <div class=" col-sm-offset-3 col-sm-9">
+                  <button type="submit" class="btn btn-primary register" >Register</button>
+               </div>
+            </div>
+         </form>
+
+      </div>
+
+
+      <script type="text/javascript"> 
+      </script>
+   </body>
+
+</html>

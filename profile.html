@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+   <head>
+      <meta charset="UTF-8" enctype="application/json">
+      <title>Login</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+      <style type="text/css">
+         body {
+            background : #ddd;
+            font-family: 'Open Sans', sans-serif;
+            color: #686a69;
+         }
+         .container {
+            height: 625px;
+            width: 65%; 
+            background : #f9fdfe;
+            padding-right: 50px;
+            padding-left: 50px;
+            margin-top: 10px;
+            overflow: auto;
+            box-shadow: 2px 1px 4px 5px #999999; 
+
+         }
+         .table {
+            margin-top: 30px;
+         }
+      </style>
+
+   </head>
+   <body>
+      <div class="container">
+         
+         <fieldset>
+            <legend class="text-center"><h1>Welcome to your profile</h1></legend>
+            <p id="warn">Hi <Strong><span id="name"></span></Strong>, Please check your details below are correct.</p>
+            <table class="table table-bordered table-hover table-striped">
+            <tbody>
+               <tr>
+                  <td>User ID</td>
+                  <td id="idValue"></td>
+               </tr>
+               <tr>
+                  <td>Name</td>
+                  <td id="nameValue"></td>
+               </tr>
+               <tr>
+                  <td>Mobile No.</td>
+                  <td id="mobileValue"></td>
+               </tr>
+               <tr>
+                  <td>Email</td>
+                  <td id="emailValue"></td>
+               </tr>
+               <tr>
+                  <td>Country</td>
+                  <td id="countryValue"></td>
+               </tr>
+               <tr>
+                  <td>State</td>
+                  <td id="stateValue"></td>
+               </tr>
+               <tr>
+                  <td>Pincode</td>
+                  <td id="pinValue"></td>
+               </tr>
+               <tr>
+                  <td>Gender</td>
+                  <td id="genderValue"></td>
+               </tr>
+               <tr>
+                  <td>Languages known</td>
+                  <td id="langValue"></td>
+               </tr>
+               <tr>
+                  <td>About yourself</td>
+                  <td id="aboutValue"></td>
+               </tr>
+            </tbody>
+         </table><br />
+         </fieldset>
+
+         <button class="btn btn-primary pull-right edit">Edit profile</button>
+         
+      </div>
+
+
+   <script type="text/javascript">
+      $(document).ready(function() {
+         if(localStorage) {
+            var formData = JSON.parse(localStorage.getItem("formData"));
+            $("#idValue").text(formData.ID);
+            $("#nameValue, #name").text(formData.fullname);
+            $("#mobileValue").text(formData.phoneNo);
+            $("#emailValue").text(formData.mail);
+            $("#countryValue").text(formData.countryName);
+            $("#stateValue").text(formData.stateName);
+            $("#pinValue").text(formData.pincode);
+            $("#genderValue").text(formData.gender);
+            $("#langValue").text(formData.language);
+            $("#aboutValue").text(formData.abt);
+            console.log(formData);
+         }
+         else {
+            $("#warn").text("Sorry, failed to load data from local storage");
+            console.log("Your browser doesn't have local storage");
+         }
+
+         $(".edit").click(function() {
+             var path = window.location.href;
+             var pathAfterhash = path.substring(path.indexOf("?")+1);
+             console.log(pathAfterhash);
+             var link = "index.html#" + pathAfterhash;
+             window.location.assign(link);
+         });
+         });
+   </script>
+   </body>
+</html>

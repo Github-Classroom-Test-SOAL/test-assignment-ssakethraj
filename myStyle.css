@@ -1,0 +1,38 @@
+         body {
+            background : #ddd;
+            font-family: 'Open Sans', sans-serif;
+            color: #686a69;
+         }
+         p {
+            color: red;
+         }
+
+         .invalid {
+            border : 1px solid red;
+         }
+         .valid {
+            border : 1px solid green ;
+         }
+         .container {
+            height: 625px;
+            width: 65%; 
+            background : #f9fdfe;
+            padding-right: 50px;
+            padding-left: 50px;
+            margin-top: 10px;
+            overflow: auto;
+            box-shadow: 2px 1px 4px 5px #999999; 
+         }
+         .form-control {
+            border-radius: 0;
+            height: 44px;
+            max-width: 543px;
+         }
+         .control-label {
+            padding-top: 12px;
+            font-size: 
+         }
+         h1 {
+            font-weight: 600;
+            font-size: 25px;
+         }
